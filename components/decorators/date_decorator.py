@@ -14,14 +14,14 @@ class DateDecorator(MessageDecorator):
         :param date: Дата, которая будет добавлена к сообщению.
         """
         super().__init__(message)
-        self.date = date
+        self._date = date
 
     def print_message(self) -> None:
         """
         Печатает основное сообщение и дату.
         """
         self.message.print_message()
-        print(self.date)
+        print(self._date)
 
     def get_content(self) -> str:
         """
@@ -29,4 +29,4 @@ class DateDecorator(MessageDecorator):
 
         :return: Строка, основное сообщение и дату.
         """
-        return self.message.get_content() + f"\n{self.date}"
+        return self.message.get_content() + f"\n{self._date}"

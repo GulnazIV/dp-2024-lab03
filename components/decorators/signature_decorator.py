@@ -14,18 +14,18 @@ class SignatureDecorator(MessageDecorator):
         :param signature: Подпись, которая будет добавлена к сообщению.
         """
         super().__init__(message)
-        self.footer = signature
+        self._signature = signature
 
     def print_message(self) -> None:
         """
         Печатает основное сообщение и подпись.
         """
         self.message.print_message()
-        print(self.footer)
+        print(self._signature)
 
     def get_content(self) -> str:
         """
         Получает содержимое сообщения с добавленной подписью.
         :return: Строка, содержащая основное сообщение и подпись.
         """
-        return self.message.get_content() + f"\n{self.footer}"
+        return self.message.get_content() + f"\n{self._signature}"

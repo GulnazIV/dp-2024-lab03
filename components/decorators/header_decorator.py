@@ -14,13 +14,13 @@ class HeaderDecorator(MessageDecorator):
         :param header: Заголовок, который будет добавлен к сообщению.
         """
         super().__init__(message)
-        self.header = header
+        self._header = header
 
     def print_message(self) -> None:
         """
         Печатает заголовок и основное сообщение.
         """
-        print(self.header)
+        print(self._header)
         self.message.print_message()
 
     def get_content(self) -> str:
@@ -28,4 +28,4 @@ class HeaderDecorator(MessageDecorator):
         Получает содержимое сообщения с добавленным заголовком.
         :return: Строка, содержащая заголовок и основное сообщение.
         """
-        return f"{self.header}\n" + self.message.get_content()
+        return f"{self._header}\n" + self.message.get_content()

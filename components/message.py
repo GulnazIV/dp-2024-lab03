@@ -11,17 +11,17 @@ class Message(IMessage):
         Инициализация сообщения.
         :param content: Строка, представляющая содержимое сообщения.
         """
-        self.content = content
+        self._content = content
 
     def print_message(self) -> None:
         """
         Выводит содержимое сообщения на консоль.
         """
-        print(self.content)
+        print(self._content)
 
     def get_content(self) -> str:
         """
         Получает содержимое сообщения.
         :return: Строка, представляющая текстовое содержимое сообщения.
         """
-        return self.content
+        return self._content

@@ -20,7 +20,7 @@ class Base64Decorator(MessageDecorator):
         """
         Печатает закодированное сообщение в формате Base64.
         """
-        self._covert_base64()
+        self._convert_base64()
         print(self.base64_encoded_message)
 
     def get_content(self) -> str:
@@ -30,7 +30,7 @@ class Base64Decorator(MessageDecorator):
         """
         return self.message.get_content()
 
-    def _covert_base64(self) -> None:
+    def _convert_base64(self) -> None:
         """
         Преобразует сообщение.
         """
