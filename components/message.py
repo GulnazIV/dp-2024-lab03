@@ -13,7 +13,7 @@ class Message(IMessage):
         """
         self._content = content
 
-    def print_message(self) -> None:
+    def print(self) -> None:
         """
         Выводит содержимое сообщения на консоль.
         """

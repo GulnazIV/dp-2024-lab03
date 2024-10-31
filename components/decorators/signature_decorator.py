@@ -16,12 +16,12 @@ class SignatureDecorator(MessageDecorator):
         super().__init__(message)
         self._signature = signature
 
-    def print_message(self) -> None:
+    def print(self) -> None:
         """
         Печатает основное сообщение и подпись.
         """
-        self.message.print_message()
-        print(self._signature)
+        content =  self.get_content()
+        print(content)
 
     def get_content(self) -> str:
         """

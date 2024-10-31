@@ -16,12 +16,12 @@ class HeaderDecorator(MessageDecorator):
         super().__init__(message)
         self._header = header
 
-    def print_message(self) -> None:
+    def print(self) -> None:
         """
         Печатает заголовок и основное сообщение.
         """
-        print(self._header)
-        self.message.print_message()
+        content = self.get_content()
+        print(content)
 
     def get_content(self) -> str:
         """

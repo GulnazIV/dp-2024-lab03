@@ -16,7 +16,7 @@ class Base64Decorator(MessageDecorator):
         """
         super().__init__(message)
 
-    def print_message(self) -> None:
+    def print(self) -> None:
         """
         Печатает закодированное сообщение в формате Base64.
         """

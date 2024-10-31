@@ -6,20 +6,20 @@ from components.decorators.signature_decorator import SignatureDecorator
 
 if __name__ == "__main__":
     message = Message("С наступающим Новым годом!")
-    message.print_message()
+    message.print()
     print("-" * 50)
 
     msgWithHeader = HeaderDecorator(message, "Добрый день,")
-    msgWithHeader.print_message()
+    msgWithHeader.print()
     print("-" * 50)
 
     msgWithHeaderAndFooter = SignatureDecorator(msgWithHeader, "Дед Мороз")
-    msgWithHeaderAndFooter.print_message()
+    msgWithHeaderAndFooter.print()
     print("-" * 50)
 
     msgWithHeaderFooterAndDate = DateDecorator(msgWithHeaderAndFooter, "26.12.2020")
-    msgWithHeaderFooterAndDate.print_message()
+    msgWithHeaderFooterAndDate.print()
     print("-" * 50)
 
     base64_message = Base64Decorator(msgWithHeaderFooterAndDate)
-    base64_message.print_message()
+    base64_message.print()

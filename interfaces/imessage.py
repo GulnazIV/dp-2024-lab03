@@ -7,7 +7,7 @@ class IMessage(ABC):
     """
 
     @abstractmethod
-    def print_message(self):
+    def print(self):
         """
         Выводит содержимое сообщения.
         """

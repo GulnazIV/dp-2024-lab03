@@ -34,7 +34,7 @@ class TestMessageDecorators(unittest.TestCase):
         """
         with StringIO() as buf:
             sys.stdout = buf
-            self.message.print_message()
+            self.message.print()
             output = buf.getvalue()
             self.assertEqual(output.strip(), "С наступающим Новым годом!")
 
@@ -45,7 +45,7 @@ class TestMessageDecorators(unittest.TestCase):
         header_msg = HeaderDecorator(self.message, "Добрый день,")
         with StringIO() as buf:
             sys.stdout = buf
-            header_msg.print_message()
+            header_msg.print()
             output = buf.getvalue()
             self.assertIn("Добрый день,", output)
             self.assertIn("С наступающим Новым годом!", output)
@@ -57,7 +57,7 @@ class TestMessageDecorators(unittest.TestCase):
         signature_msg = SignatureDecorator(self.message, "Дед Мороз")
         with StringIO() as buf:
             sys.stdout = buf
-            signature_msg.print_message()
+            signature_msg.print()
             output = buf.getvalue()
             self.assertIn("С наступающим Новым годом!", output)
             self.assertIn("Дед Мороз", output)
@@ -69,10 +69,11 @@ class TestMessageDecorators(unittest.TestCase):
         date_msg = DateDecorator(self.message, "26.12.2020")
         with StringIO() as buf:
             sys.stdout = buf
-            date_msg.print_message()
+            date_msg.print()
             output = buf.getvalue()
             self.assertIn("26.12.2020", output)
             self.assertIn("С наступающим Новым годом!", output)
+
 
     def test_base64_decorator(self):
         """
@@ -88,7 +89,7 @@ class TestMessageDecorators(unittest.TestCase):
 
         with StringIO() as buf:
             sys.stdout = buf
-            base64_msg.print_message()
+            base64_msg.print()
             output = buf.getvalue()
 
             content_to_encode = msg_with_header_signature_date.get_content()

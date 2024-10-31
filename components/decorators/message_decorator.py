@@ -25,7 +25,7 @@ class MessageDecorator(IMessage):
         """
         Вызывает метод print_message() у декорируемого сообщения.
         """
-        self._message.print_message()
+        self._message.print()
 
     def get_content(self) -> str:
         """

@@ -16,12 +16,12 @@ class DateDecorator(MessageDecorator):
         super().__init__(message)
         self._date = date
 
-    def print_message(self) -> None:
+    def print(self) -> None:
         """
         Печатает основное сообщение и дату.
         """
-        self.message.print_message()
-        print(self._date)
+        content = self.get_content()
+        print(content)
 
     def get_content(self) -> str:
         """
