@@ -74,6 +74,21 @@ class TestMessageDecorators(unittest.TestCase):
             self.assertIn("26.12.2020", output)
             self.assertIn("С наступающим Новым годом!", output)
 
+    def test_all_decorator(self):
+        """
+        Тестирует все декораторы.
+        """
+        msg_with_header_signature_date = DateDecorator(
+            SignatureDecorator(
+                HeaderDecorator(self.message, "Добрый день,"), "Дед Мороз"
+            ),
+            "26.12.2020",
+        )
+        with StringIO() as buf:
+            sys.stdout = buf
+            msg_with_header_signature_date.print()
+            output = buf.getvalue()
+            self.assertEqual("Добрый день,\nС наступающим Новым годом!\nДед Мороз\n26.12.2020\n", output)
 
     def test_base64_decorator(self):
         """
